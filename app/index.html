@@ -42,6 +42,17 @@
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
+			  <li>
+				<div>
+					  <div id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Ventas
+						<span class="caret"></span>
+					  </div>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#newSale">Nueva venta</a></li>
+					  </ul>
+				</div>
+			  </li>
             </ul>
           </div>
         </div>
@@ -88,6 +99,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+		<script src="scripts/controllers/sales.js"></script>
         <!-- endbuild -->
 </body>
 </html>
