@@ -1,1 +1,37 @@
-{{ articles[0].Name }}
+<div class="container">
+	<div class="col-md-12" style="height: 440px;">
+		<div class="col-md-6">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Precio</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="article in selectedArticles" style="cursor: pointer;" ng-mouseenter="crossColor={color:'black'}" ng-mouseleave="crossColor={color:'white'}">
+						<td>{{ article.Name }}</td>
+						<td>{{ article.Price | currency }}</td>
+						<td ng-click="removeFromSelectedArticles(article)"><span ng-style="crossColor" style="color: white;">x</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<div class="list-group">
+				<a ng-repeat="article in articles" class="list-group-item" style="cursor: pointer;" ng-click="addToSelectedArticles(article)">
+					<h4 class="list-group-item-heading">{{ article.Name }}</h4>
+					<p class="list-group-item-text">{{ article.Price | currency }}</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<span>Total: {{ totalPrice }}</span>
+		<br></br>
+		<button type="submit" class="btn btn-primary">Enviar</button>
+		<button class="btn btn-danger" ng-click="cancel()">Cancelar</button>
+		<br></br>
+	</div>
+</div>
