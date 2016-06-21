@@ -1,3 +1,5 @@
+
+		<script src="scripts/services/products.js"></script>
 <div class="container">
 	<div class="col-md-12" style="height: 440px;">
 		<div class="col-md-6">
@@ -19,10 +21,14 @@
 			</table>
 		</div>
 		<div class="col-md-6">
+			<div class="form-group">
+				<label for="search"></label>
+				<input id="search" class="form-control" type="text" placeholder="Buscar" ng-model="searchProduct"></input>
+			</div>
 			<div class="list-group">
-				<a ng-repeat="article in articles" class="list-group-item" style="cursor: pointer;" ng-click="addToSelectedArticles(article)">
+				<a ng-repeat="article in articles | filter: { Name: searchProduct }" class="list-group-item" style="cursor: pointer;" ng-click="addToSelectedArticles(article)">
 					<h4 class="list-group-item-heading">{{ article.Name }}</h4>
-					<p class="list-group-item-text">{{ article.Price | currency }}</p>
+					<p class="list-group-item-text">{{ article.Price | number: 2 | currency }}</p>
 				</a>
 			</div>
 		</div>

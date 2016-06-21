@@ -8,7 +8,7 @@
  * Controller of the facturationSystemApp
  */
 angular.module('facturationSystemApp')
-  .controller('newSaleController', function ($scope) {
+  .controller('newSaleController', function ($scope, ProductService) {
 	  
 	$scope.totalPrice = 0.0;
 	$scope.selectedArticles = [];
@@ -42,4 +42,8 @@ angular.module('facturationSystemApp')
 		$scope.selectedArticles = [];
 		$scope.updateTotalPrice();
 	};
+	//ProductService.list(function (data) {
+	//		console.log(data);
+	//	}
+	//);
   });
