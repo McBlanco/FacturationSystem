@@ -16,5 +16,8 @@ app.factory("ProductService", function($http) {
 	function detail() {
 	};
 	
-	return {};
+	return {
+		list: list,
+		detail: detail,
+	};
 });
